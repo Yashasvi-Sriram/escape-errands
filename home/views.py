@@ -5,7 +5,7 @@ from errands.models import Errand, Piece
 from datetime import datetime as dt, timedelta as td
 from django.urls import reverse
 from django.http import HttpResponsePermanentRedirect as httpRPR, HttpResponse as httpR
-from std import Std
+from home.std import Std
 import json
 
 

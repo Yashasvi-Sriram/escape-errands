@@ -26,11 +26,11 @@ INSTALLED_APPS = [
     'cli.apps.CliConfig',
     'errands.apps.ErrandsConfig',
     'time_table.apps.TimeTableConfig',
-    'stats.apps.StatsConfig',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -56,9 +56,9 @@ TEMPLATES = [
     },
 ]
 
-ROOT_URLCONF = 'EscapeErrands_Dj.urls'
+ROOT_URLCONF = 'escapeerrands.urls'
 
-WSGI_APPLICATION = 'EscapeErrands_Dj.wsgi.application'
+WSGI_APPLICATION = 'escapeerrands.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
@@ -120,4 +120,4 @@ STATICFILES_DIRS = (
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
